@@ -83,12 +83,15 @@
         if(
            //            [[file pathExtension] isEqualToString:@"wav"]||
            [[file pathExtension] isEqualToString:@"doc"]
+           || [[file pathExtension] isEqualToString:@"apk"]
+           || [[file pathExtension] isEqualToString:@"ipa"]
            || [[file pathExtension] isEqualToString:@"xlsx"]
+           || [[file pathExtension] isEqualToString:@"xls"]
+           || [[file pathExtension] isEqualToString:@"xlsm"]
            || [[file pathExtension] isEqualToString:@"docx"]
            || [[file pathExtension] isEqualToString:@"pdf"]
            || [[file pathExtension] isEqualToString:@"zip"]
-           || [[file pathExtension] isEqualToString:@"txt"]
-           || [[file pathExtension] isEqualToString:@"png"] ) {
+           || [[file pathExtension] isEqualToString:@"txt"]) {
             
             FileModel *model = [[FileModel alloc]init];
             NSLog(@"%@扩展名是%@",file,[file pathExtension]);
@@ -159,14 +162,17 @@
     if ([model.fileExtension isEqualToString:@"wav"]) {
       imageName = @"icon_audio";
     }
-    else
-      if ([model.fileExtension isEqualToString:@"doc"]||[model.fileExtension isEqualToString:@"docx"]) {
+    else if ([model.fileExtension isEqualToString:@"doc"]||[model.fileExtension isEqualToString:@"docx"]) {
       imageName = @"icon_docx";
     }
     else if ([model.fileExtension isEqualToString:@"pdf"]) {
       imageName = @"icon_pdf";
     }else if ([model.fileExtension isEqualToString:@"zip"]) {
       imageName = @"icon_zip";
+    }else if ([model.fileExtension isEqualToString:@"png"]||[model.fileExtension isEqualToString:@"jpg"]||[model.fileExtension isEqualToString:@"jpeg"]) {
+      imageName = @"icon_image";
+    }else if ([model.fileExtension isEqualToString:@"xlsx"]||[model.fileExtension isEqualToString:@"xlsm"]||[model.fileExtension isEqualToString:@"xls"]) {
+      imageName = @"icon_excel";
     }
     else {
       imageName = @"icon_file";

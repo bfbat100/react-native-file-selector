@@ -91,6 +91,7 @@
            || [[file pathExtension] isEqualToString:@"docx"]
            || [[file pathExtension] isEqualToString:@"pdf"]
            || [[file pathExtension] isEqualToString:@"zip"]
+           || [[file pathExtension] isEqualToString:@"rar"]
            || [[file pathExtension] isEqualToString:@"txt"]) {
             
             FileModel *model = [[FileModel alloc]init];
@@ -167,7 +168,7 @@
     }
     else if ([model.fileExtension isEqualToString:@"pdf"]) {
       imageName = @"icon_pdf";
-    }else if ([model.fileExtension isEqualToString:@"zip"]) {
+    }else if ([model.fileExtension isEqualToString:@"zip"] || [model.fileExtension isEqualToString:@"rar"]) {
       imageName = @"icon_zip";
     }else if ([model.fileExtension isEqualToString:@"png"]||[model.fileExtension isEqualToString:@"jpg"]||[model.fileExtension isEqualToString:@"jpeg"]) {
       imageName = @"icon_image";
